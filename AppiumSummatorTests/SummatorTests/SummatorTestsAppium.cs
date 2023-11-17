@@ -43,15 +43,26 @@ namespace AppiumSummatorTests.Tests
         {
             return driver;
         }
-        [Test]
-        public void Test_Sum_PositiveNums_POM()
+
+        [TestCase("5","15","20")]
+        [TestCase("10","20","30")]
+        public void Test_Sum_PositiveNums_POM(string field1, string field2, string expected)
         {
             var window = new SummatorWindow(driver);
-            string value1 = "5";
-            string value2 = "15";
-            string result = window.Calculate(value1, value2);
-            Assert.That(result, Is.EqualTo("20"));
+            string actual = window.Calculate(field1, field2);
+            Assert.That(expected, Is.EqualTo(actual));
+            Assert.That(expected, Is.EqualTo(actual));
 
+
+        }
+        [TestCase("-5","-5","-10")]
+        [TestCase("-2","-3","-5")]
+        public void Test_Sum_Negative_POM(string field1, string field2, string expected)
+        {
+            var window = new SummatorWindow(driver);
+            string actual = window.Calculate(field1, field2);
+            Assert.That(expected, Is.EqualTo(actual));
+            Assert.That(expected, Is.EqualTo(actual));
 
         }
     }
