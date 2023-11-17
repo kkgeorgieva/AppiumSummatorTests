@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj": {}
+    "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj": {
+    "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj",
+        "projectUniqueName": "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj",
         "projectName": "AppiumSummatorTests",
-        "projectPath": "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj",
+        "projectPath": "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests.csproj",
         "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\AppiumSummatorTests\\obj\\",
+        "outputPath": "C:\\Users\\georg\\OneDrive\\Desktop\\Automation QA\\repos\\AppiumSummatorTests\\AppiumSummatorTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Appium.WebDriver": {
+              "target": "Package",
+              "version": "[4.4.5, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.7.1, )"
