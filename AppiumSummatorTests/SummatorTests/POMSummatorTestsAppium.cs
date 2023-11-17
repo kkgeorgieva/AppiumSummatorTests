@@ -83,5 +83,14 @@ namespace AppiumSummatorTests.Tests
             Assert.That(expected, Is.EqualTo(actual));
 
         }
+       
+        [TestCase("invalid", "invalid", "error")]
+        public void Test_Sum_Invalid_POM(string field1, string field2, string expected)
+        {
+            var window = new SummatorWindow(driver);
+            string actual = window.Calculate(field1, field2);
+            Assert.That(expected, Is.EqualTo(actual));
+
+        }
     }
 }
