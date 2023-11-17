@@ -5,7 +5,7 @@ using OpenQA.Selenium.Appium.Windows;
 
 namespace AppiumSummatorTests
 {
-    public class Tests
+    public class NonPomTests
     {
         //Appium test project 
 
