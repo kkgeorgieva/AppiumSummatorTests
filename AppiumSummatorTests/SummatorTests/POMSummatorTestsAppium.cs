@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using AppiumSummatorTests.Window;
 using NUnit.Framework;
+using OpenQA.Selenium.Appium.Service;
 
 namespace AppiumSummatorTests.Tests
 {
-    public class SummatorTestsAppium
+    public class POMSummatorTestsAppium
     {
         private WindowsDriver<WindowsElement> driver;
         // Adding the url of the server we are going to use
-        private const string AppiumServer = "http://127.0.0.1:4723/wd/hub";
+       private const string AppiumServer = "http://127.0.0.1:4723/wd/hub";
 
         private AppiumOptions options;
+
+       // private AppiumLocalService appiumLocal;
 
         [SetUp]
         public void OpenApp()
@@ -29,14 +32,21 @@ namespace AppiumSummatorTests.Tests
             // Location of the app that will be tested
             options.AddAdditionalCapability(MobileCapabilityType.App,
             @"C:\Users\georg\OneDrive\Desktop\Automation QA\SummatorDesktopApp.exe");
+
+           // appiumLocal = new AppiumServiceBuilder().UsingAnyFreePort().Build();
+            //appiumLocal.Start();
             // URI = Unified Recourse Identiificator
             this.driver = new WindowsDriver<WindowsElement>(new Uri(AppiumServer), options);
+            //this.driver = new WindowsDriver<WindowsElement>(appiumLocal, options);
         }
 
         [TearDown]
         public void CloseApp()
         {
-            this.driver.Quit();
+            //stopping the service
+           // appiumLocal.Dispose();
+            //stopping the application
+            driver.Quit ();
         }
 
         public WindowsDriver<WindowsElement> GetDriver()
@@ -51,7 +61,7 @@ namespace AppiumSummatorTests.Tests
             var window = new SummatorWindow(driver);
             string actual = window.Calculate(field1, field2);
             Assert.That(expected, Is.EqualTo(actual));
-            Assert.That(expected, Is.EqualTo(actual));
+        
 
 
         }
@@ -61,7 +71,6 @@ namespace AppiumSummatorTests.Tests
         {
             var window = new SummatorWindow(driver);
             string actual = window.Calculate(field1, field2);
-            Assert.That(expected, Is.EqualTo(actual));
             Assert.That(expected, Is.EqualTo(actual));
 
         }
