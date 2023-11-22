@@ -20,7 +20,7 @@ namespace AppiumSummatorTests.Tests
 
         private AppiumOptions options;
 
-       // private AppiumLocalService appiumLocal;
+      // private AppiumLocalService appiumLocal;
 
         [SetUp]
         public void OpenApp()
@@ -33,11 +33,11 @@ namespace AppiumSummatorTests.Tests
             options.AddAdditionalCapability(MobileCapabilityType.App,
             @"C:\Users\georg\OneDrive\Desktop\Automation QA\SummatorDesktopApp.exe");
 
-           // appiumLocal = new AppiumServiceBuilder().UsingAnyFreePort().Build();
-            //appiumLocal.Start();
+           //appiumLocal = new AppiumServiceBuilder().UsingAnyFreePort().Build();
+           //appiumLocal.Start(); 
             // URI = Unified Recourse Identiificator
-            this.driver = new WindowsDriver<WindowsElement>(new Uri(AppiumServer), options);
-            //this.driver = new WindowsDriver<WindowsElement>(appiumLocal, options);
+           this.driver = new WindowsDriver<WindowsElement>(new Uri(AppiumServer), options);
+          // this.driver = new WindowsDriver<WindowsElement>(appiumLocal, options);
         }
 
         [TearDown]
@@ -45,8 +45,10 @@ namespace AppiumSummatorTests.Tests
         {
             //stopping the service
            // appiumLocal.Dispose();
-            //stopping the application
+           //stopping the application
+      
             driver.Quit ();
+           // appiumLocal.Dispose ();
         }
 
         public WindowsDriver<WindowsElement> GetDriver()
